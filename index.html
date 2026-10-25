@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10243a">
+  <title>Banking DP Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand-icon" aria-hidden="true">▤</div>
+      <div>
+        <div class="brand-name">Banking DP Calculator</div>
+        <div class="brand-subtitle">Financial calculation workspace</div>
+      </div>
+      <div class="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Calculator Ready
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <div class="eyebrow">Banking Tools / DP Calculator</div>
+      <h1>Calculate with confidence.</h1>
+      <p class="page-description">
+        Enter case details to calculate DP amounts and charges
+        with clear, easy-to-review results.
+      </p>
+    </section>
+
+    <div class="case-tabs" role="tablist" aria-label="Select case type">
+      <button class="case-tab active" id="tab-fresh"
+        type="button" role="tab" aria-selected="true"
+        aria-controls="case-form" data-case="fresh">
+        <span class="case-number">01</span><br>
+        Fresh Case
+      </button>
+
+      <button class="case-tab" id="tab-enhancement"
+        type="button" role="tab" aria-selected="false"
+        aria-controls="case-form" data-case="enhancement" tabindex="-1">
+        <span class="case-number">02</span><br>
+        Enhancement
+      </button>
+
+      <button class="case-tab" id="tab-takeover"
+        type="button" role="tab" aria-selected="false"
+        aria-controls="case-form" data-case="takeover" tabindex="-1">
+        <span class="case-number">03</span><br>
+        Takeover Case
+      </button>
+    </div>
+
+    <div class="dashboard">
+      <section class="panel" id="case-form" role="tabpanel"
+        aria-labelledby="tab-fresh">
+        <div class="panel-heading">
+          <div>
+            <h2 id="form-title">Fresh Case Details</h2>
+            <p id="form-description">
+              Enter the one-year DP and applicable charges.
+            </p>
+          </div>
+          <span class="case-badge" id="case-badge">FRESH</span>
+        </div>
+
+        <form id="calculator-form" novalidate>
+          <div id="fields-container"></div>
+
+          <div id="form-error" class="field-error"
+            role="alert" aria-live="polite"></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <span aria-hidden="true">＝</span>
+              Calculate DP
+            </button>
+            <button type="button" class="btn btn-secondary"
+              id="reset-btn">
+              ↻ Reset
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel results-panel"
+        aria-labelledby="results-heading" aria-live="polite">
+        <div class="panel-heading">
+          <div>
+            <h2 id="results-heading">Calculation Results</h2>
+            <p>Your calculated values will appear here.</p>
+          </div>
+          <span class="case-badge">INR ₹</span>
+        </div>
+
+        <div id="results-container">
+          <div class="empty-state">
+            <div class="empty-icon" aria-hidden="true">₹</div>
+            <strong>Ready to calculate</strong>
+            <p>
+              Enter the required values and select Calculate DP
+              to see your results.
+            </p>
+          </div>
+        </div>
+
+        <div class="notice">
+          <strong>Calculation note</strong><br>
+          Results use the formulas configured for each case type.
+          Verify the applicable banking policy before using figures
+          for an actual transaction.
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      Banking DP Calculator · Independent calculation tool<br>
+      No bank affiliation or live banking integration.
+    </footer>
+  </main>
+</body>
+</html>
